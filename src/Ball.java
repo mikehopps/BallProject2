@@ -24,10 +24,13 @@ public class Ball {
     }
 
     public void move(int w, int h){
-
-
         x += vx;
         y += vy;
+
+        if(y + diameter >= h ){
+            vy = -vy;
+        }
+
     }
 
     public void randomColor(){
