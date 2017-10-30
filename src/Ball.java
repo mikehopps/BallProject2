@@ -21,6 +21,11 @@ public class Ball {
     public void draw(Graphics2D g2){
         g2.setColor(color);
         g2.fillOval(x, y, diameter, diameter);
+//        g2.rotate(Math.toRadians(45), x, y);
+//        g2.setColor(color);
+//        g2.drawLine(400, 400, x, y);
+//        g2.fillRect(x, y, diameter, diameter);
+//        g2.rotate(-Math.toRadians(45), x, y);
     }
 
     public void move(int w, int h){
@@ -28,7 +33,17 @@ public class Ball {
         y += vy;
 
         if(y + diameter >= h ){
-            vy = -vy;
+            vy = -Math.abs(vy);
+            y = h - diameter;
+        }else if(y <= 0){
+            vy = Math.abs(vy);
+            y = 0;
+        }else if(x + diameter >= w ){
+            vx = -Math.abs(vx);
+            x = w - diameter;
+        }else if(x <= 0){
+            vx = Math.abs(vx);
+            x = 0;
         }
 
     }

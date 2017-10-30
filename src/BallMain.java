@@ -9,7 +9,7 @@ public class BallMain {
 
         JFrame frame = new JFrame("Bouncing Ball Program");
         frame.setDefaultCloseOperation(frame.EXIT_ON_CLOSE);
-        int width = 1200;
+        int width = 800;
         int height = 800;
         frame.setPreferredSize(new Dimension(width, height+24));
 
